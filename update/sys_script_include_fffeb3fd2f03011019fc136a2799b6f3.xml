@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_58872_needit.GlideAjax</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description/>
+        <name>GlideAjax</name>
+        <script><![CDATA[var GlideAjax = Class.create();
+GlideAjax.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+	
+	DemoTest:function(){
+		var userId=this.getparameter('sysparm_user');
+		var gr=new GlideRecord('sys_user');
+		gr.addQuery('sys_id',userId);
+		gr.query();
+		if(gr.next())
+		{
+			var a = gr.first_name+" "+gr.last_name;
+			return a;
+			
+		}
+	},
+    type: 'GlideAjax'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-04-25 04:16:12</sys_created_on>
+        <sys_id>fffeb3fd2f03011019fc136a2799b6f3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>GlideAjax</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_script_include_fffeb3fd2f03011019fc136a2799b6f3</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-04-25 04:16:12</sys_updated_on>
+    </sys_script_include>
+</record_update>
